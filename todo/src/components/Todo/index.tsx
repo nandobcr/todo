@@ -1,5 +1,8 @@
 import { Text, View } from 'react-native';
 
+import { Task } from '../Task';
+import { EmptyTask } from '../EmptyTask';
+
 import { styles } from './styles';
 
 export function Todo() {
@@ -14,8 +17,8 @@ export function Todo() {
                     <Text style={styles.textConcluidas}>Concluídas</Text>
                     <Text style={styles.counter}>0</Text>
                 </View>
-            </View>    
+            </View>
+            <EmptyTask />
         </View>
     )
 }
-

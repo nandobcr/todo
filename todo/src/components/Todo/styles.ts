@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         marginTop: 16
     },
     statusHeader: {
+        marginBottom: 20,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
@@ -20,7 +21,6 @@ export const styles = StyleSheet.create({
         borderRadius: 25,
         fontWeight: 'bold',
         textAlign: 'center',
-        alignItems: 'center',
         backgroundColor: '#333333',
     },
     textCriadas: {

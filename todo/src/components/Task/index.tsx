@@ -3,7 +3,11 @@ import { Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
 
-export function Task() {
+interface TaskProps {
+    title: string;
+}
+
+export function Task({title}: TaskProps) {
     const [isCompleted, setIsCompleted] = useState(false);
 
     return(
@@ -17,11 +21,13 @@ export function Task() {
                         : require('../../assets/images/unchecked.png') 
                     }/>
             </TouchableOpacity>
-            <Text 
-                style={[styles.taskText, isCompleted && styles.taskTextCompleted]}
-            >
-                Integer urna interdum massa libero auctor neque turpis turpis semper.
-            </Text>
+            <View style={styles.textContainer}>
+                <Text 
+                    style={[styles.taskText, isCompleted && styles.taskTextCompleted]}
+                >
+                    {title}
+                </Text>
+            </View>
             <Pressable
                 style={({ pressed }) => ({
                     transform: [{ scale: pressed ? 0.9 : 1 }]

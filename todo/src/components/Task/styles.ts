@@ -7,15 +7,18 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#262626'
+        backgroundColor: '#262626',
+        justifyContent: 'space-between'
+    },
+    textContainer: {
+        flex: 1,
+        alignItems: 'flex-start',
     },
     taskText: {
         fontSize: 14,
         flexShrink: 1,
         color: '#D9D9D9',
-        flexWrap: 'wrap',        
         marginHorizontal: 20,
-        textAlign: 'justify',
     },
     taskTextCompleted: {
         color: '#808080',
@@ -31,7 +34,7 @@ export const styles = StyleSheet.create({
     },
     iconTrashPressed: {
         borderRadius: 5,
-        color: '#E25858',
-        backgroundColor: '#333333',
+        tintColor: '#E25858',
+        backgroundColor: '#333333'
     }
 });

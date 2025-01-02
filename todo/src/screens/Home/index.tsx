@@ -41,7 +41,16 @@ export function Home() {
     }
 
     function handleToggleTaskRemove(taskTitle: string) {
-        setTasks(prevTasks => prevTasks.filter(task => task.title !== taskTitle));
+        Alert.alert('Aviso', `Deseja remover ${taskTitle} da lista de tarefas?`, [
+            {
+                text: 'Não',
+                style: 'cancel'
+            },
+            {
+                text: 'Sim',
+                onPress: () => setTasks(prevTasks => prevTasks.filter(task => task.title !== taskTitle))
+            }
+        ]);
     }
 
     return (

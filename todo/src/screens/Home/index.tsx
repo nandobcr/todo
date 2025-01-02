@@ -26,6 +26,10 @@ export function Home() {
         );
     }
 
+    function handleToggleTaskRemove(taskTitle: string) {
+        setTasks(prevTasks => prevTasks.filter(task => task.title !== taskTitle));
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -46,7 +50,10 @@ export function Home() {
                     <Image source={require('../../assets/images/plus.png')} />
                 </Pressable>
             </View>
-            <Todo tasks={tasks} onToggleTaskCompletion={handleToggleTaskCompletion} />
+            <Todo 
+                tasks={tasks} 
+                onToggleTaskCompletion={handleToggleTaskCompletion} 
+                onToggleTaskRemove={handleToggleTaskRemove}/>
         </View>
     );
 }

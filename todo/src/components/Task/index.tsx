@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
@@ -7,9 +6,10 @@ interface TaskProps {
     title: string;
     isCompleted: boolean;
     onComplete: () => void;
+    onRemove: () => void;
 }
 
-export function Task({ title, isCompleted, onComplete }: TaskProps) {
+export function Task({ title, isCompleted, onComplete, onRemove }: TaskProps) {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onComplete}>
@@ -31,6 +31,7 @@ export function Task({ title, isCompleted, onComplete }: TaskProps) {
                 style={({ pressed }) => ({
                     transform: [{ scale: pressed ? 0.9 : 1 }],
                 })}
+                onPress={onRemove}
             >
                 {({ pressed }) => (
                     <Image

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { FlatList, Text, View } from 'react-native';
 
 import { Task } from '../Task';
@@ -9,9 +8,10 @@ import { styles } from './styles';
 interface TodoProps {
     tasks: { title: string; isCompleted: boolean }[];
     onToggleTaskCompletion: (taskTitle: string) => void;
+    onToggleTaskRemove: (taskTitle: string) => void;
 }
 
-export function Todo({ tasks, onToggleTaskCompletion }: TodoProps) {
+export function Todo({ tasks, onToggleTaskCompletion, onToggleTaskRemove }: TodoProps) {
     const createdTasks = tasks.length;
     const completedTasks = tasks.filter(task => task.isCompleted).length;
 
@@ -35,6 +35,7 @@ export function Todo({ tasks, onToggleTaskCompletion }: TodoProps) {
                         title={item.title}
                         isCompleted={item.isCompleted}
                         onComplete={() => onToggleTaskCompletion(item.title)}
+                        onRemove={() => onToggleTaskRemove(item.title)}
                     />
                 )}
                 ListEmptyComponent={<EmptyTask />}

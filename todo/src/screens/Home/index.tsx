@@ -19,7 +19,11 @@ export function Home() {
         } else if (tasks.some(t => t.title.trim().toUpperCase() === formattedTask)) {
             alertMessage = `Tarefa ${task} já está na lista.`;
         } else {
-            setTasks(prevTasks => [...prevTasks, { title: task, isCompleted: false }]);
+            const newTask: TaskType = {
+                title: task,
+                isCompleted: false
+            }; 
+            setTasks(prevTasks => [...prevTasks, newTask]);
         }
 
         setTask('');

@@ -76,7 +76,8 @@ export function Home() {
             <Todo 
                 tasks={tasks} 
                 onToggleTaskCompletion={handleToggleTaskCompletion} 
-                onToggleTaskRemove={handleToggleTaskRemove}/>
+                onToggleTaskRemove={handleToggleTaskRemove}
+            />
         </View>
     );
 }

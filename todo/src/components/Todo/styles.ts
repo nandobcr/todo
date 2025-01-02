@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
         borderRadius: 25,
         fontWeight: 'bold',
         textAlign: 'center',
-        backgroundColor: '#333333',
+        backgroundColor: '#333333'
     },
     textCriadas: {
         color: '#4EA8DE',

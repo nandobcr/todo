@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        alignItems: 'flex-start',
+        alignItems: 'flex-start'
     },
     taskText: {
         fontSize: 14,

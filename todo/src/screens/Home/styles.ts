@@ -23,11 +23,11 @@ export const styles = StyleSheet.create({
         padding: 16,
         fontSize: 16,
         color: '#FFF',
+        borderWidth: 1,
         marginRight: 5,
         borderRadius: 5,
         borderColor: '#0D0D0D',
-        borderWidth: 1,
-        backgroundColor: '#262626',
+        backgroundColor: '#262626'
       },
       button: {
         width: 54,

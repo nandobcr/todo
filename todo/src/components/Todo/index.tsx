@@ -39,6 +39,7 @@ export function Todo({ tasks, onToggleTaskCompletion, onToggleTaskRemove }: Todo
                     />
                 )}
                 ListEmptyComponent={<EmptyTask />}
+                showsVerticalScrollIndicator={false}
             />
         </View>
     );

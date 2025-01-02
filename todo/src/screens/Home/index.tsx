@@ -11,12 +11,21 @@ export function Home() {
     const [tasks, setTasks] = useState<TaskType[]>([]);
 
     function handleAddTask() {
-        if (tasks.some(t => t.title === task)) {
-            return Alert.alert('Aviso', `Tarefa ${task} já está na lista.`);
+        const formattedTask = task.trim().toUpperCase();
+        let alertMessage = '';
+
+        if (!formattedTask) {
+            alertMessage = 'Preencha o nome da tarefa.';
+        } else if (tasks.some(t => t.title.trim().toUpperCase() === formattedTask)) {
+            alertMessage = `Tarefa ${task} já está na lista.`;
+        } else {
+            setTasks(prevTasks => [...prevTasks, { title: task, isCompleted: false }]);
         }
 
-        setTasks(prevTasks => [...prevTasks, { title: task, isCompleted: false }]);
         setTask('');
+        if (alertMessage) {
+            Alert.alert('Aviso', alertMessage);
+        }
     }
 
     function handleToggleTaskCompletion(taskTitle: string) {

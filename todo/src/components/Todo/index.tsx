@@ -2,11 +2,12 @@ import { FlatList, Text, View } from 'react-native';
 
 import { Task } from '../Task';
 import { EmptyTask } from '../EmptyTask';
+import { TaskType } from '../../interfaces/TaskType';
 
 import { styles } from './styles';
 
 interface TodoProps {
-    tasks: { title: string; isCompleted: boolean }[];
+    tasks: TaskType[];
     onToggleTaskCompletion: (taskTitle: string) => void;
     onToggleTaskRemove: (taskTitle: string) => void;
 }
@@ -32,8 +33,7 @@ export function Todo({ tasks, onToggleTaskCompletion, onToggleTaskRemove }: Todo
                 keyExtractor={item => item.title}
                 renderItem={({ item }) => (
                     <Task
-                        title={item.title}
-                        isCompleted={item.isCompleted}
+                        task={item}
                         onComplete={() => onToggleTaskCompletion(item.title)}
                         onRemove={() => onToggleTaskRemove(item.title)}
                     />

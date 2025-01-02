@@ -1,30 +1,30 @@
 import { Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
+import { TaskType } from '../../interfaces/TaskType';
 
 interface TaskProps {
-    title: string;
-    isCompleted: boolean;
+    task: TaskType;
     onComplete: () => void;
     onRemove: () => void;
 }
 
-export function Task({ title, isCompleted, onComplete, onRemove }: TaskProps) {
+export function Task({ task, onComplete, onRemove }: TaskProps) {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onComplete}>
                 <Image
                     style={styles.iconCheck}
                     source={
-                        isCompleted
+                        task.isCompleted
                             ? require('../../assets/images/checked.png')
                             : require('../../assets/images/unchecked.png')
                     }
                 />
             </TouchableOpacity>
             <View style={styles.textContainer}>
-                <Text style={[styles.taskText, isCompleted && styles.taskTextCompleted]}>
-                    {title}
+                <Text style={[styles.taskText, task.isCompleted && styles.taskTextCompleted]}>
+                    {task.title}
                 </Text>
             </View>
             <Pressable

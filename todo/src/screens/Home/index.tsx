@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Alert, Image, Pressable, TextInput, View } from 'react-native';
 
 import { Todo } from '../../components/Todo';
+import { TaskType } from '../../interfaces/TaskType';
 
 import { styles } from './styles';
 
 export function Home() {
     const [task, setTask] = useState('');
-    const [tasks, setTasks] = useState<{ title: string; isCompleted: boolean }[]>([]);
+    const [tasks, setTasks] = useState<TaskType[]>([]);
 
     function handleAddTask() {
         if (tasks.some(t => t.title === task)) {
